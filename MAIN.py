@@ -1,6 +1,6 @@
-import WeatherUI
+from WeatherUI import WeatherUI
 import SWDriver
-WeatherUI.set_driver(SWDriver)
+wui=WeatherUI(driver=SWDriver)
 while True:
     SWDriver.update()
-    WeatherUI.update()
+    wui.update()
