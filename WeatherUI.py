@@ -16,6 +16,8 @@ class WindDirection:
         self.line=self.canvas.create_line(50, 50, 50*cos(self.driver.wind_direction)+50, 50*sin(self.driver.wind_direction)+50)
     def grid(self, row=0, column=0):
         self.canvas.grid(column=column, row=row)
+    def pack(self):
+        self.canvas.pack()
 class Overview:
     def __init__(self, master, driver):
         self.font=('', 48, '')
@@ -47,6 +49,18 @@ class Overview:
         self.wind_direction_label.grid(column=3, row=1)
         
         self.frame.grid(column=column, row=row)
+    def pack(self):
+        self.temperature.grid(column=0, row=0)
+        self.wind_speed.grid(column=1, row=0)
+        self.pressure.grid(column=2, row=0)
+        self.wind_direction.grid(column=3, row=0)
+        
+        self.temperature_label.grid(column=0, row=1)
+        self.wind_speed_label.grid(column=1, row=1)
+        self.pressure_label.grid(column=2, row=1)
+        self.wind_direction_label.grid(column=3, row=1)
+        
+        self.frame.pack()
 class WeatherUI:
     def __init__(self, master, driver):
         self.driver=driver
