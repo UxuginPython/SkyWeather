@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 try:
     from tkinter import *
 except:
@@ -6,6 +7,7 @@ except:
     from Tkinter import *
 from WeatherUI import WeatherUI
 import SWDriver
+from sys import exit
 window=Tk()
 window.title('Weather')
 ui=WeatherUI(window, driver=SWDriver)
@@ -13,5 +15,8 @@ ui.pack()
 while True:
     SWDriver.update()
     ui.update()
-    window.update()
-    window.update_idletasks()
+    try:
+        window.update()
+        window.update_idletasks()
+    except TclError:
+        exit()
