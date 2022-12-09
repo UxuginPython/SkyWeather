@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+#Actual driver unfinished;
+#This is just a placeholder to test the UI.
 from random import randrange
 temperature=70
 wind_speed=10
